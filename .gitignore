@@ -24,9 +24,6 @@ dist/
 build/
 *.egg-info/
 
-# Mikkel's stuff
-docs/*
-
 # Local development
 .env
 *.log
@@ -37,3 +34,6 @@ htmlcov/
 
 # MinIO data
 data/
+
+# Test runner script
+run_tests.ps1

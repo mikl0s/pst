@@ -4,7 +4,7 @@ A web application for analyzing PST (Personal Storage Table) files, with feature
 
 ## Features
 
-- Upload and process PST files
+- Upload and process PST files (up to 1GB)
 - Extract email metadata and content
 - Manage email attachments
 - Advanced search functionality
@@ -12,34 +12,29 @@ A web application for analyzing PST (Personal Storage Table) files, with feature
 
 ## Prerequisites
 
-- Python 3.8+
 - Node.js 16+
-- PostgreSQL
-- MinIO
+- PostgreSQL 14+
+- TypeScript 5+
+- NestJS 10+
 
 ## Setup
 
 ### Backend Setup
 
-1. Create a virtual environment and activate it:
+1. Install dependencies:
 ```bash
-python -m venv venv
-.\venv\Scripts\activate  # Windows
+cd backend
+npm install
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Copy `.env.example` to `.env` and configure your environment variables:
+2. Copy `.env.example` to `.env` and configure your environment variables:
 ```bash
 cp .env.example .env
 ```
 
-4. Start the backend server:
+3. Start the backend server:
 ```bash
-uvicorn backend.app.main:app --reload
+npm run start:dev
 ```
 
 ### Frontend Setup
@@ -65,19 +60,16 @@ npm start
 
 ### Backend Tests
 
-Run the tests using pytest:
+Run the tests using Jest:
 ```bash
-# Activate virtual environment first
-.\venv\Scripts\activate  # Windows
-
 # Run all tests
-pytest
+npm run test
 
 # Run specific test file
-pytest backend/app/tests/test_upload.py
+npm run test -- backend/app/tests/test_upload.test.ts
 
 # Run tests with coverage report
-pytest --cov=app
+npm run test:coverage
 ```
 
 The test suite includes:
@@ -88,9 +80,9 @@ The test suite includes:
 
 ## Development
 
-- Backend API runs on `http://localhost:8000`
-- Frontend development server runs on `http://localhost:3000`
-- API documentation available at `http://localhost:8000/docs`
+- Backend API runs on `http://localhost:3000`
+- Frontend development server runs on `http://localhost:3001`
+- API documentation available at `http://localhost:3000/docs`
 
 ## Project Structure
 
@@ -100,18 +92,17 @@ PST Analyzer/
 │   └── app/
 │       ├── api/
 │       │   └── routes/
-│       │       └── upload.py
+│       │       └── upload.controller.ts
 │       ├── core/
-│       │   ├── config.py
-│       │   └── security.py
+│       │   ├── config.ts
+│       │   └── security.ts
 │       ├── services/
-│       │   └── storage.py
-│       └── main.py
+│       │   └── storage.service.ts
+│       └── main.ts
 ├── frontend/
 │   └── src/
 │       ├── components/
 │       │   └── upload/
 │       │       └── FileUpload.tsx
 │       └── App.tsx
-├── requirements.txt
-└── .env.example
+├── .env.example
