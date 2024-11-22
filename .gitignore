@@ -41,7 +41,6 @@ run_tests.ps1
 # Working documents
 docs/fix-*.md
 docs/idea.md
-docs/lessons.md
 docs/next-story.md
 docs/post-mortem.md
 docs/start.md
