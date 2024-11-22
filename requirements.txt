@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+sqlalchemy
+psycopg2-binary
+minio
+python-dotenv
+pydantic
+pydantic-settings
+pytest
+pytest-asyncio
+pytest-mock
+pytest-cov
+pytest-sugar
+httpx

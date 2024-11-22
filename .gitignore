@@ -1,0 +1,39 @@
+# VS Code
+*.code-workspace
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.env
+.coverage
+.pytest_cache/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Mikkel's stuff
+docs/*
+
+# Local development
+.env
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage.*
+
+# MinIO data
+data/
